@@ -3,7 +3,12 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class CashRegister {
-    private final double[] students = new double[INTERVALS_COUNT];
+    /**
+     * Cash register
+     * averageQueueLength - average queue length measurements
+     * INTERVALS_COUNT - count of average queue length measurements
+     */
+    private final double[] averageQueueLength = new double[INTERVALS_COUNT];
     public static final int INTERVALS_COUNT = 16;
 
     public CashRegister(String path, int indexOfCashRegister) {
@@ -13,7 +18,7 @@ public class CashRegister {
                 if (count > INTERVALS_COUNT) {
                     throw new IllegalArgumentException("Intervals count mast be 16");
                 }
-                students[count] = scanner.nextDouble();
+                averageQueueLength[count] = scanner.nextDouble();
                 count++;
             }
         } catch (FileNotFoundException e) {
@@ -24,7 +29,7 @@ public class CashRegister {
         }
     }
 
-    public double[] getStudents() {
-        return students;
+    public double[] getAverageQueueLength() {
+        return averageQueueLength;
     }
 }
