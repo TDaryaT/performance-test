@@ -1,5 +1,5 @@
 public class Task3 {
-    public static int findMaxAverageStudentsCount(CashRegister[] cashRegisters) {
+    public static int findMaxAveragePersonsCount(CashRegister[] cashRegisters) {
         int cashRegisterIntervalsCount = CashRegister.INTERVALS_COUNT;
         double maxAverageStudentsCount = cashRegisters[0].getAverageQueueLength()[0];
         int maxInterval = 1;
@@ -23,7 +23,7 @@ public class Task3 {
             cashRegisters[i] = new CashRegister(args[0], i + 1);
         }
 
-        int maxAverageStudentsCount = findMaxAverageStudentsCount(cashRegisters);
-        System.out.println(maxAverageStudentsCount);
+        int maxAveragePersonsCount = findMaxAveragePersonsCount(cashRegisters);
+        System.out.println(maxAveragePersonsCount);
     }
 }
